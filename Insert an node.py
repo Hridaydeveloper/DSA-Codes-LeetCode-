@@ -21,6 +21,20 @@ while curr.next != None:
   curr = curr.next
 curr.next = new
 
+#Insert k place node
+curr = head
+new = List(10)
+k = 4
+
+if k == 1:
+  new.next = head
+  head = new
+else:
+  for i in range(k - 2):
+    curr = curr.next
+  new.next = curr.next
+  curr.next = new
+
 # Print the List
 curr = head
 while curr:

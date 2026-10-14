@@ -31,4 +31,25 @@ class Solution:
                     return curr
                 curr = curr.next
                 count += 1
+
+
+#Or,
+
+class Solution:
+    def middleNode(self, head: ListNode | None) -> ListNode | None:
+        if head is None:
+            return head
+        #Find the length
+        length = 0
+        curr = head
+        while curr:
+            length += 1
+            curr = curr.next
+
+        #Find the middle element
+        curr = head
+        for i in range(length//2):
+            curr = curr.next
+
+        return curr
                 

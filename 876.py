@@ -52,4 +52,20 @@ class Solution:
             curr = curr.next
 
         return curr
+
+
+#Or,
+
+class Solution:
+    def middleNode(self, head: ListNode | None) -> ListNode | None:
+        if head is None:
+            return head
+        fast = head
+        slow = head
+
+        while fast != None and fast.next != None:
+            fast = fast.next.next
+            slow = slow.next
+
+        return slow
                 

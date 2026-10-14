@@ -38,4 +38,30 @@ class Solution:
             curr = next_node
             
         return res
+
+
+# Or, 
+
+class Solution:
+    def removeNthFromEnd(self, head: ListNode | None, n: int) -> ListNode | None:
+
+        #Find the length
+        curr = head
+        length = 0
+        while curr:
+            length += 1
+            curr = curr.next
+
+        if length == n:
+            return head.next
+
+        #Find the nth node before the target
+        curr = head
+        for i in range(length - n - 1):
+            curr = curr.next
+
+        #Remove the node
+        curr.next = curr.next.next
+
+        return head
             

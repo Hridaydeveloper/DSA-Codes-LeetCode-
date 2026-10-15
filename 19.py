@@ -64,4 +64,27 @@ class Solution:
         curr.next = curr.next.next
 
         return head
+
+# Or, 
+class Solution:
+    def removeNthFromEnd(self, head: ListNode | None, n: int) -> ListNode | None:
+        curr = head
+        for i in range(n):
+            curr = curr.next
+
+        if curr is None:
+            return head.next
+
+        j = curr
+        i = head
+
+        while j != None and j.next != None:
+            j = j.next
+            i = i.next
+
+        i.next = i.next.next
+
+        return head
+
+
             

@@ -1,0 +1,18 @@
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+        l1 = headA
+        l2 = headB
+
+        while l1 != l2:
+            if l1 is None:
+                l1 = headB
+            else:
+                l1 = l1.next
+
+            if l2 is None:
+                l2 = headA
+            else:
+                l2 = l2.next
+        
+        #L1 and L2 are pointing the same node
+        return l1

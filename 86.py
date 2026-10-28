@@ -31,7 +31,7 @@ class Solution(object):
 
         return res.next
 
-Or, 
+# Or, 
 
 class Solution(object):
     def partition(self, head, x):
